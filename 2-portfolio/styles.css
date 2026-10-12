@@ -34,16 +34,17 @@ body {
 
 .gallery {
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 0;
+  gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .card {
-  width: 300px;
+  width: calc((100% - 40px) / 3);
+  min-width: 300px;
   background: #ffffff;
   border-radius: 12px;
   overflow: hidden;
