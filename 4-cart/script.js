@@ -121,9 +121,15 @@ function renderCart() {
     totalQty += item.qty;
   });
 
+  if (cart.length === 0) {
+    emptyMsg.hidden = false;
+    total = 0;
+  } else {
+    emptyMsg.hidden = true;
+  }
+
   badgeEl.textContent = totalQty;
   totalEl.textContent = total;
-  emptyMsg.hidden = true;
 }
 
 promoBtn.addEventListener("click", applyPromo);
