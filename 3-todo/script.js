@@ -46,6 +46,12 @@ function clearCompleted() {
 }
 
 function getVisibleTasks() {
+  if (currentFilter === "active") {
+    return tasks.filter((t) => !t.done);
+  } else if (currentFilter === "done") {
+    return tasks.filter((t) => t.done);
+  }
+
   return tasks;
 }
 
@@ -55,7 +61,6 @@ function updateCounter() {
 }
 
 function render() {
-
   list.textContent = "";
 
   const visible = getVisibleTasks();
